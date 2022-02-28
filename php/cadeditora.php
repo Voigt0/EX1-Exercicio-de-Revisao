@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <?php
-    //<img class="footerItem" id="footerLogo" src="../img/carGoLogo.png">
-    //<a href="../index.php"><img class="navItem" id="navTitle" src="../img/carGoLogo.png"></a>
     include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
     include_once "acao.php";
@@ -26,6 +24,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/editora.css'>
     <script src='../js/main.js'></script>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <style>
         #searchImg {
             width: 10rem;
@@ -34,10 +33,6 @@
     </style>
 </head>
 <body>
-    <?php 
-    
-    
-    ?>
     <header>
         <nav class="" id="nav">
             <a href="../index.php"><p class="navItem" id="navHome"> Home </p></a>
@@ -76,7 +71,6 @@
         </p>
         <p class="footerItem footerText" id="footerTbm">
             VEJA TAMBÉM:<br><br>
-
             <a class="footerHyperlink" href="facebook.com"><img class="footerItem" id="footerFacebook" src="../img/facebookLogo.png">Facebook<br></a>
             <a class="footerHyperlink" href="instagram.com"><img class="footerItem" id="footerInstagram" src="../img/instagramLogo.png">Instagram<br></a>
         </p>
