@@ -20,8 +20,6 @@
     require_once "conf/Conexao.php";
     
 
-
-
     function buscarDados($id,$tabela){
         $pdo = Conexao::getInstance();
         $consulta = $pdo->query("SELECT * FROM locacao WHERE LOC_ID = $id");
@@ -33,9 +31,6 @@
         }
         return $dados;
     }
-
-
-
 
 
     function dados(){
@@ -62,11 +57,6 @@
         $dados['LOJ_TELEFONE'] = $_POST["LOJ_TELEFONE"];
         return $dados;
     }
-
-
-
-
-
 ?>
 </body>
 </html>
