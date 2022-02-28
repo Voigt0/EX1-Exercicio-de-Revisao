@@ -27,6 +27,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/cadastro.css'>
     <script src='../js/main.js'></script>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <style>
         #searchImg {
             width: 10rem;
@@ -82,7 +83,6 @@
         </p>
         <p class="footerItem footerText" id="footerTbm">
             VEJA TAMBÉM:<br><br>
-
             <a class="footerHyperlink" href="facebook.com"><img class="footerItem" id="footerFacebook" src="../img/facebookLogo.png">Facebook<br></a>
             <a class="footerHyperlink" href="instagram.com"><img class="footerItem" id="footerInstagram" src="../img/instagramLogo.png">Instagram<br></a>
         </p>
