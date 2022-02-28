@@ -17,24 +17,17 @@
     </style>
 </head>
 <body class="">
-    <?php
+<?php
     include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
     acao($comando, $tabela);
 
-
-    
-    
 
     function acao($acao, $tabela){
         if($acao == "insert"){inserir($tabela);}
         else if($acao == "deletar"){deletar($tabela);}
         else if($acao == "update"){atualizar($tabela);}
     }
-
-
-
-
 
 
     function inserir($tabela){
@@ -70,15 +63,6 @@
     }
 
 
-
-
-
-
-
-
-
-
-
     function deletar($tabela){
     $id = $_GET['id'];
     $pdo = Conexao::getInstance();
@@ -96,10 +80,6 @@
         header('location:tabelagenero.php');
     }
     }
-
-
-
-
 
 
     function atualizar($tabela){
@@ -136,15 +116,6 @@
     }
 
 
-
-
-
-
-
-
-
-
-
     function dados(){
         $dados = array();
         $dados['CLI_NOME'] = $_POST["CLI_NOME"];
@@ -161,13 +132,6 @@
         $dados['EDI_SEDE'] = $_POST["EDI_SEDE"];
         return $dados;
     }
-
-
-
-
-
-
-
 
 
     function buscarDados($id,$tabela){
@@ -200,38 +164,6 @@
     }
         return $dados;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    if($comando == "verificar"){
-        $pdo = Conexao::getInstance();
-        $cpf = $_POST["CLI_CPF"];
-        $senha = $_POST["CLI_SENHA"];     
-        $stmt = $pdo->query("SELECT * FROM biblioteca.cliente;");
-        $confirmado = 0;
-            while ($linha = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                if ($cpf == $linha['CLI_CPF'] && $senha == $linha['CLI_SENHA']){
-                    $confirmado = 1;
-                    $usuario = $linha['CLI_NOME'];
-                }
-            }
-            if($confirmado == 0){
-                header('location:login.php');
-            } else {
-                header('location:logou.php');
-            }
-    }
-    ?>
+?>
 </body>
 </html>
