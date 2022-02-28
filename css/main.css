@@ -1,0 +1,184 @@
+body{
+    font-family: Dubai;
+    margin: 0px 0px;
+    background-color: #FCE205;
+    font-size: 1rem;
+}
+
+
+
+
+
+nav{
+    margin: 0px 0px;
+    color: #FFF;
+    overflow: hidden;
+    background-color: #303030;
+}
+
+nav :hover{
+    background-color: #151515;
+    color: #FFF;
+  }
+
+#navTitle{
+    width: 8rem;
+    margin: 0px 0px;
+    overflow: hidden;
+    padding: 1.5rem 2rem;
+    float: left;
+}
+
+#navQS{
+    margin: 0px 0px;
+    padding: 2rem 2rem;
+    font-size: 1.6rem;
+    float: right;
+}
+
+#navHome{
+    margin: 0px 0px;
+    padding: 2rem 2rem;
+    font-size: 1.6rem;
+    float: right;
+}
+
+#navLogin{
+    margin: 0px 0px;
+    padding: 2rem 2rem;
+    font-size: 1.6rem;
+    float: right;
+}
+
+a:link, a:hover, a:visited, a:active {
+    color: #FFF;
+}
+
+
+
+#search{
+    margin: 0px 0px;
+    padding: 2rem 2rem;
+    color: #FFF;
+    overflow: hidden;
+    background-color: #151515;
+}
+
+.searchText{
+    margin: 0px 0px;
+    width: 20%;
+    padding: 0rem 2rem 0rem 4rem;
+    font-size: 1.3rem;
+    float: left;
+}
+
+.searchInput{
+    float: left;
+    margin: 0px 0px;
+    margin-bottom: 2rem;
+    width: 70%;
+    padding: 0.6rem 0.6rem;
+    font-size: 1.2rem;
+    color: #FFF;
+    background-color: #303030;
+    border: 0px solid #000000;
+}
+
+
+
+
+
+.texto{
+    margin: 2rem 3rem 2rem 3rem;
+    padding: 2rem;
+    border: 2px solid #909090;
+    background-color: #FFFFFF;
+}
+
+#loreIpsum {
+    width: 40%;
+    float: left;
+}
+
+#adm {
+    width: 30%;
+    float: left;
+    color: black;
+    font-size: 3rem;
+}
+
+
+
+
+footer{
+    float: right;
+    margin: 0px 0px;
+    width: 100%;
+    color: #FFF;
+    overflow: hidden;
+    background-color: #303030;
+}
+
+#footerContent {
+    padding: 3rem 8rem 2rem 8rem;
+}
+
+#footerLogo{
+    float: left;
+    width: 8rem;
+}
+
+#footerFacebook{
+    width: 1.5rem;
+}
+
+#footerInstagram{
+    width: 1.5rem;
+}
+
+#footerInfo{
+    float: left;
+}
+
+#footerTbm{
+    float: right;
+    font-size: 1.2rem;
+}
+
+.footerHyperlink:link {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.footerHyperlink:visited {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.footerHyperlink:hover {
+    text-decoration: underline;
+    color: #FFF;
+}
+
+.footerHyperlink:active {
+    text-decoration: underline;
+    color: #FFF;
+}
+
+@media screen and (max-width: 700px){
+    #navHome{
+        position: absolute;
+        visibility: hidden;
+    }
+    #navQS{
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    #footerInfo{
+        position: absolute;
+        visibility: hidden;
+    }
+}
