@@ -57,7 +57,7 @@
                     $type = "<=";
                     $procurar = ($_POST["procurar"]);
                     if(is_numeric($procurar) == false){
-                        $procurar = 9999;
+                        $procurar = 0;
                     }
                 }
                 $pdo = Conexao::getInstance();
