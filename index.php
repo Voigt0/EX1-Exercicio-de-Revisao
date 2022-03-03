@@ -15,7 +15,7 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body class="">
-  <style>body {background-color: #F2E0DF;font-weight: bolder;}</style>
+  <style>body {background-color: #DFD3C3;font-weight: bolder;}</style>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
