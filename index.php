@@ -15,7 +15,7 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <style>
     body {
-      background-image: url("img/biblioteca.jpg");
+      background-image: url("img/biblioteca.jpg"); 
       font-weight: bolder;
     }
   </style>
