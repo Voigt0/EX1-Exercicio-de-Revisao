@@ -13,9 +13,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <style>
+    body {
+      background-image: url("img/images.jpg");
+      font-weight: bolder;
+    }
+  </style>
 </head>
 <body class="">
-  <style>body {background-color: #DFD3C3;font-weight: bolder;}</style>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">Menu</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +58,7 @@
     </button>
   </nav>
 <br><br>
-<h1 style="font-family: 'Fredoka One', cursive; text-align: center; font-size: 15vh; padding-bottom: 15vh;">Biblioteca</h1>
+<h1 style="font-family: 'Fredoka One', cursive; text-align: center; font-size: 15vh; padding-bottom: 15vh; color:#FFF;">Biblioteca</h1>
 <br><br>
   <div class="">
     <table class="table table-striped" style="background-color: #FFF;">
