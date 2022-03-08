@@ -15,14 +15,14 @@
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <style>
     body {
-      background-image: url("img/images.jpg");
+      background-image: url("img/biblioteca.jpg");
       font-weight: bolder;
     }
   </style>
 </head>
 <body class="">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php">Menu</a>
+    <a class="navbar-brand" href="index.php"><img src="img/booklogo.png" style="width: 6vw;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
