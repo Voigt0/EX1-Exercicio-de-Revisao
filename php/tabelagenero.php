@@ -20,7 +20,7 @@
 </head>
 <body class="">
     <?php include_once "menu.php"; ?>
-    <form method="post">
+    <form method="post" style="background-color: rgb(33, 37, 41); color: #FFF;">
         <input type="radio" id="GEN_ID" name="busca" value="GEN_ID" <?php if($busca == "GEN_ID"){echo "checked";}?>>
         <label for="huey"><h3>#ID</h3></label>
         <br>
@@ -44,7 +44,6 @@
                 <tr class="table-dark">
                     <th scope="col">#ID</th>
                     <th scope="col">Nome</th>
-                    <th scope="row">DETALHES</th>
                     <th scope="row">ALTERAR</th>
                     <th scope="row">EXCLUIR</th>
                 </tr>
@@ -69,7 +68,6 @@
                 <tr>
                     <td><?php echo $linha['GEN_ID'];?></td>
                     <td><?php echo $linha['GEN_NOME'];?></td>
-                    <td scope="row"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></td>
                     <td scope="row"><a href="cadgenero.php?id=<?php echo $linha['GEN_ID'];?>&comando=update"><img src="../img/history-solid.svg" style="width: 2rem;"></a></td>
                     <td><a onclick="return confirm('Deseja mesmo excluir?')" href="acao.php?id=<?php echo $linha['GEN_ID'];?>&tabela=genero&comando=deletar"><img src="../img/trash.svg" style="width: 2rem;"></a></td>
                 </tr>
