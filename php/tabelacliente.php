@@ -15,7 +15,7 @@
 </head>
 <body class="">
     <?php include_once "menu.php"; ?>
-    <form method="post">
+    <form method="post" style="background-color: rgb(33, 37, 41); color: #FFF;">
         <input type="radio" id="CLI_ID" name="busca" value="CLI_ID" <?php if($busca == "CLI_ID"){echo "checked";}?>>
         <label for="huey"><h3>#ID</h3></label>
         <br>
