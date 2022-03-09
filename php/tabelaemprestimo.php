@@ -45,7 +45,6 @@
                     <th scope="col">Saída</th>
                     <th scope="col">Nome do cliente</th>
                     <th scope="col">Nome do exemplar</th>
-                    <th scope="row">DETALHE</th>
                     <th scope="row">ALTERAR</th>
                     <th scope="row">EXCLUIR</th>
                 </tr>
