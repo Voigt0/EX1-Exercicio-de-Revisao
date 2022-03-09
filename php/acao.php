@@ -59,6 +59,27 @@
         $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`editora` (`EDI_NOME`, `EDI_FUNDACAO`, `EDI_FUNDADOR`, `EDI_SEDE`) VALUES ('$nome', '$fundacao', '$fundador', '$sede')");
         $stmt->execute();
         header('location:tabelaeditora.php');
+    } else if($tabela == 'titulo'){
+        $dados = dados();
+        $nome = $dados['TIT_NOME'];
+        $autor = $dados['TIT_AUTOR'];
+        $numeropag = $dados['TIT_NUMEROPAG'];
+        $idioma = $dados['TIT_IDIOMA'];
+        $lancamento = $dados['TIT_LANCAMENTO'];
+        $ediid = $dados['EDI_ID'];
+        $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`titulo` (`TIT_NOME`, `TIT_AUTOR`, `TIT_NUMEROPAG`, `TIT_IDIOMA`, `TIT_LANCAMENTO`, `EDI_ID`) VALUES ('$nome', '$autor', '$numeropag', '$idioma', '$lancamento', '$ediid');");
+        $stmt->execute();
+        header('location:tabelatitulo.php');
+    } else if($tabela == 'endereco'){
+        $dados = dados();
+        $estado = $dados['END_ESTADO'];
+        $cidade = $dados['END_CIDADE'];
+        $rua = $dados['END_RUA'];
+        $numero = $dados['END_NUMERO'];
+        $cliid = $dados['CLI_ID'];
+        $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`endereco` (`END_ESTADO`, `END_CIDADE`, `END_RUA`, `END_NUMERO`, `CLI_ID`) VALUES ('$estado', '$cidade', '$rua', '$numero', '$cliid');");
+        $stmt->execute();
+        header('location:tabelaendereco.php');
     }
     }
 
@@ -78,6 +99,18 @@
         $stmt = $pdo->query("DELETE FROM `biblioteca`.`genero` WHERE GEN_ID = $id");
         $stmt->execute();
         header('location:tabelagenero.php');
+    } else if($tabela == 'titulo'){
+        $stmt = $pdo->query("DELETE FROM `biblioteca`.`titulo` WHERE TIT_ID = $id");
+        $stmt->execute();
+        header('location:tabelatitulo.php');
+    } else if($tabela == 'endereco'){
+        $stmt = $pdo->query("DELETE FROM `biblioteca`.`endereco` WHERE END_ID = $id");
+        $stmt->execute();
+        header('location:tabelaendereco.php');
+    } else if($tabela == 'exemplar'){
+        $stmt = $pdo->query("DELETE FROM `biblioteca`.`exemplar` WHERE EXE_ID = $id");
+        $stmt->execute();
+        header('location:tabelaexemplar.php');
     }
     }
 
@@ -112,6 +145,27 @@
         $stmt = $pdo->prepare("UPDATE `biblioteca`.`cliente` SET `CLI_NOME` = '$nome', `CLI_SOBRENOME` = '$sobrenome', `CLI_NASCIMENTO` = '$nascimento', `CLI_TELEFONE` = '$telefone', `CLI_CPF` = '$cpf', `CLI_EMAIL` = '$email', `CLI_SENHA` = '$senha' WHERE (`CLI_ID` = '$id');");
         $stmt->execute();
         header('location:tabelacliente.php');
+    } else if($tabela == 'titulo'){
+        $dados = dados();
+        $nome = $dados['TIT_NOME'];
+        $autor = $dados['TIT_AUTOR'];
+        $numeropag = $dados['TIT_NUMEROPAG'];
+        $idioma = $dados['TIT_IDIOMA'];
+        $lancamento = $dados['TIT_LANCAMENTO'];
+        $ediid = $dados['EDI_ID'];
+        $stmt = $pdo->prepare("UPDATE `biblioteca`.`titulo` SET `TIT_NOME` = '$nome', `TIT_AUTOR` = '$autor', `TIT_NUMEROPAG` = '$numeropag', `TIT_IDIOMA` = '$idioma', `TIT_LANCAMENTO` = '$lancamento', `EDI_ID` = '$ediid' WHERE (`TIT_ID` = '$id');");
+        $stmt->execute();
+        header('location:tabelatitulo.php');
+    } else if($tabela == 'endereco'){
+        $dados = dados();
+        $estado = $dados['END_ESTADO'];
+        $cidade = $dados['END_CIDADE'];
+        $rua = $dados['END_RUA'];
+        $numero = $dados['END_NUMERO'];
+        $cliid = $dados['CLI_ID'];
+        $stmt = $pdo->prepare("UPDATE `biblioteca`.`endereco` SET `END_ESTADO` = '$estado', `END_CIDADE` = '$cidade', `END_RUA` = '$rua', `END_NUMERO` = '$numero', `CLI_ID` = '$cliid' WHERE (`END_ID` = '$id');");
+        $stmt->execute();
+        header('location:tabelaendereco.php');
     }
     }
 
@@ -130,6 +184,17 @@
         $dados['EDI_FUNDACAO'] = $_POST["EDI_FUNDACAO"];
         $dados['EDI_FUNDADOR'] = $_POST["EDI_FUNDADOR"];
         $dados['EDI_SEDE'] = $_POST["EDI_SEDE"];
+        $dados['TIT_NOME'] = $_POST["TIT_NOME"];
+        $dados['TIT_AUTOR'] = $_POST["TIT_AUTOR"];
+        $dados['TIT_NUMEROPAG'] = $_POST["TIT_NUMEROPAG"];
+        $dados['TIT_IDIOMA'] = $_POST["TIT_IDIOMA"];
+        $dados['TIT_LANCAMENTO'] = $_POST["TIT_LANCAMENTO"];
+        $dados['EDI_ID'] = $_POST["EDI_ID"];
+        $dados['END_ESTADO'] = $_POST["END_ESTADO"];
+        $dados['END_CIDADE'] = $_POST["END_CIDADE"];
+        $dados['END_RUA'] = $_POST["END_RUA"];
+        $dados['END_NUMERO'] = $_POST["END_NUMERO"];
+        $dados['CLI_ID'] = $_POST["CLI_ID"];        
         return $dados;
     }
 
@@ -160,6 +225,25 @@
             $dados['EDI_FUNDACAO'] = $linha["EDI_FUNDACAO"];
             $dados['EDI_FUNDADOR'] = $linha["EDI_FUNDADOR"];
             $dados['EDI_SEDE'] = $linha["EDI_SEDE"];
+        }
+    } else if($tabela == 'titulo'){
+        $consulta = $pdo->query("SELECT * FROM titulo, editora WHERE TIT_ID = $id");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $dados['TIT_NOME'] = $linha["TIT_NOME"];
+            $dados['TIT_AUTOR'] = $linha["TIT_AUTOR"];
+            $dados['TIT_NUMEROPAG'] = $linha["TIT_NUMEROPAG"];
+            $dados['TIT_IDIOMA'] = $linha["TIT_IDIOMA"];
+            $dados['TIT_LANCAMENTO'] = $linha["TIT_LANCAMENTO"];
+            $dados['EDI_ID'] = $linha["EDI_ID"];
+        }
+    } else if($tabela == 'endereco'){
+        $consulta = $pdo->query("SELECT * FROM endereco, cliente WHERE END_ID = $id");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $dados['END_ESTADO'] = $linha["END_ESTADO"];
+            $dados['END_CIDADE'] = $linha["END_CIDADE"];
+            $dados['END_RUA'] = $linha["END_RUA"];
+            $dados['END_NUMERO'] = $linha["END_NUMERO"];
+            $dados['CLI_ID'] = $linha["CLI_ID"];
         }
     }
         return $dados;
