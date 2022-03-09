@@ -19,13 +19,12 @@ USE `biblioteca` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `biblioteca`.`cliente` (
   `CLI_ID` INT NOT NULL AUTO_INCREMENT,
-  `CLI_NOME` VARCHAR(45) NULL,
+  ` CLI_NOME` VARCHAR(45) NULL,
   `CLI_SOBRENOME` VARCHAR(45) NULL,
   `CLI_NASCIMENTO` DATE NULL,
   `CLI_TELEFONE` VARCHAR(45) NULL,
   `CLI_CPF` VARCHAR(45) NULL,
   `CLI_EMAIL` VARCHAR(45) NULL,
-  `CLI_SENHA` VARCHAR(45) NULL,
   PRIMARY KEY (`CLI_ID`))
 ENGINE = InnoDB;
 
@@ -39,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `biblioteca`.`endereco` (
   `END_CIDADE` VARCHAR(45) NULL,
   `END_RUA` VARCHAR(45) NULL,
   `END_NUMERO` INT NULL,
-  `cliente_CLI_ID` INT NOT NULL,
+  `CLI_ID` INT NOT NULL,
   PRIMARY KEY (`END_ID`),
   CONSTRAINT `fk_endereco_cliente1`
-    FOREIGN KEY (`cliente_CLI_ID`)
+    FOREIGN KEY (`CLI_ID`)
     REFERENCES `biblioteca`.`cliente` (`CLI_ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -131,20 +130,20 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `biblioteca`.`gen_exe`
+-- Table `biblioteca`.`tit_gen`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `biblioteca`.`gen_exe` (
+CREATE TABLE IF NOT EXISTS `biblioteca`.`tit_gen` (
+  `TIT_ID` INT NOT NULL,
   `GEN_ID` INT NOT NULL,
-  `EXE_ID` INT NOT NULL,
-  PRIMARY KEY (`GEN_ID`, `EXE_ID`),
-  CONSTRAINT `fk_genero_has_exemplar_genero1`
-    FOREIGN KEY (`GEN_ID`)
-    REFERENCES `biblioteca`.`genero` (`GEN_ID`)
+  PRIMARY KEY (`TIT_ID`, `GEN_ID`),
+  CONSTRAINT `fk_titulo_has_genero_titulo1`
+    FOREIGN KEY (`TIT_ID`)
+    REFERENCES `biblioteca`.`titulo` (`TIT_ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_genero_has_exemplar_exemplar1`
-    FOREIGN KEY (`EXE_ID`)
-    REFERENCES `biblioteca`.`exemplar` (`EXE_ID`)
+  CONSTRAINT `fk_titulo_has_genero_genero1`
+    FOREIGN KEY (`GEN_ID`)
+    REFERENCES `biblioteca`.`genero` (`GEN_ID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
