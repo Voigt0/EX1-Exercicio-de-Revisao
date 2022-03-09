@@ -111,6 +111,14 @@
         $stmt = $pdo->query("DELETE FROM `biblioteca`.`exemplar` WHERE EXE_ID = $id");
         $stmt->execute();
         header('location:tabelaexemplar.php');
+    } else if($tabela == 'tit_gen'){
+        $stmt = $pdo->query("DELETE FROM `biblioteca`.`tit_gen` WHERE TIT_ID = $id");
+        $stmt->execute();
+        header('location:tabelatitgen.php');
+    } else if($tabela == 'emprestimo'){
+        $stmt = $pdo->query("DELETE FROM `biblioteca`.`emprestimo` WHERE EMP_ID = $id");
+        $stmt->execute();
+        header('location:tabelaemprestimo.php');
     }
     }
 
@@ -194,7 +202,13 @@
         $dados['END_CIDADE'] = $_POST["END_CIDADE"];
         $dados['END_RUA'] = $_POST["END_RUA"];
         $dados['END_NUMERO'] = $_POST["END_NUMERO"];
-        $dados['CLI_ID'] = $_POST["CLI_ID"];        
+        $dados['CLI_ID'] = $_POST["CLI_ID"];
+        $dados['EXE_ID'] = $_POST["EXE_ID"];
+        $dados['TIT_ID'] = $_POST["TIT_ID"];
+        $dados['GEN_ID'] = $_POST["GEN_ID"];
+        $dados['EMP_ID'] = $_POST["EMP_ID"];
+        $dados['EMP_ENTRADA'] = $_POST["EMP_ENTRADA"];
+        $dados['EMP_SAIDA'] = $_POST["EMP_SAIDA"];
         return $dados;
     }
 
