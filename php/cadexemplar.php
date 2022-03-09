@@ -38,6 +38,7 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+            <p class="formItem formText" id="formNome">Título:</p>
             <select name="TIT_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
