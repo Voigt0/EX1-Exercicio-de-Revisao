@@ -80,6 +80,28 @@
         $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`endereco` (`END_ESTADO`, `END_CIDADE`, `END_RUA`, `END_NUMERO`, `CLI_ID`) VALUES ('$estado', '$cidade', '$rua', '$numero', '$cliid');");
         $stmt->execute();
         header('location:tabelaendereco.php');
+    } else if($tabela == 'exemplar'){
+        $dados = dados();
+        $titid = $dados['TIT_ID'];
+        $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`exemplar` (`TIT_ID`) VALUES ('$titid');");
+        $stmt->execute();
+        header('location:tabelaexemplar.php');
+    } else if($tabela == 'tit_gen'){
+        $dados = dados();
+        $titid = $dados['TIT_ID'];
+        $genid = $dados['GEN_ID'];
+        $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`tit_gen` (`TIT_ID`, `GEN_ID`) VALUES ('$titid', '$genid');");
+        $stmt->execute();
+        header('location:tabelatitgen.php');
+    } else if($tabela == 'emprestimo'){
+        $dados = dados();
+        $entrada = $dados['EMP_ENTRADA'];
+        $saida = $dados['EMP_SAIDA'];
+        $cliid = $dados['CLI_ID'];
+        $exeid = $dados['EXE_ID'];
+        $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`emprestimo` (`EMP_ENTRADA`, `EMP_SAIDA`, `CLI_ID`, `EXE_ID`) VALUES ('$entrada', '$saida', '$cliid', '$exeid');");
+        $stmt->execute();
+        header('location:tabelaemprestimo.php');
     }
     }
 
