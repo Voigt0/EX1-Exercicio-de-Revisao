@@ -70,7 +70,7 @@
             </select>
             <br><br>
             <input type="hidden" name="comando" id="" value="<?php if($comando == "update"){echo "update";}else{echo "insert";}?>">
-            <input type="hidden" id="tabela" name="tabela" class="tabela" value="endereco">
+            <input type="hidden" id="tabela" name="tabela" class="tabela" value="emprestimo">
             <input type="hidden" name="id" id="" value="<?php if($comando == "update"){echo $id;}?>">
             <input type="submit" class="formItem formInput" id="acao" value="ENVIAR">
             <br><br>
