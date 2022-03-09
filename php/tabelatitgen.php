@@ -41,6 +41,7 @@
                     <th scope="col">NOME DO TÍTULO</th>
                     <th scope="col">ID DO GÊNERO</th>
                     <th scope="col">NOME DO GÊNERO</th>
+                    <th scope="row">ALTERAR</th>
                     <th scope="row">EXCLUIR</th>
                 </tr>
             </thead>
@@ -68,6 +69,7 @@
                     <td scope="row"><?php echo $linha['TIT_NOME'];?></td>               
                     <th scope="row"><?php echo $linha['GEN_ID'];?></th>
                     <td scope="row"><?php echo $linha['GEN_NOME'];?></td>
+                    <td scope="row"><a href="cadtitgen.php?id=<?php echo $linha['TIT_ID'];?>&comando=update"><img src="../img/history-solid.svg" style="width: 2rem;"></a></td>
                     <td><a onclick="return confirm('Deseja mesmo excluir?')" href="acao.php?id=<?php echo $linha['TIT_ID'];?>&tabela=tit_gen&comando=deletar"><img src="../img/trash.svg" style="width: 2rem;"></a></td>
                 </tr>
             <?php } ?> 
