@@ -95,6 +95,8 @@
         header('location:tabelatitgen.php');
     } else if($tabela == 'emprestimo'){
         $dados = dados();
+        $dados['EMP_ENTRADA'] = $_POST["EMP_ENTRADA"];
+        $dados['EMP_SAIDA'] = $_POST["EMP_SAIDA"];
         $entrada = $dados['EMP_ENTRADA'];
         $saida = $dados['EMP_SAIDA'];
         $cliid = $dados['CLI_ID'];
@@ -228,9 +230,6 @@
         $dados['EXE_ID'] = $_POST["EXE_ID"];
         $dados['TIT_ID'] = $_POST["TIT_ID"];
         $dados['GEN_ID'] = $_POST["GEN_ID"];
-        $dados['EMP_ID'] = $_POST["EMP_ID"];
-        $dados['EMP_ENTRADA'] = $_POST["EMP_ENTRADA"];
-        $dados['EMP_SAIDA'] = $_POST["EMP_SAIDA"];
         return $dados;
     }
 
