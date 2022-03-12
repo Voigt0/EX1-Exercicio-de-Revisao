@@ -23,6 +23,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='../css/cadastro.css'>
     <script src='../js/main.js'></script>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
@@ -42,13 +43,13 @@
     <content>
         <form action="acao.php" method="post" id="form">
             <p class="formItem formText" id="formNascimento">Entrada:</p>
-            <input required type="date" class="formItem formInput" name="EMP_ENTRADA" id="EMP_ENTRADA" value="<?php if ($comando == "update"){echo $dados['CLI_NASCIMENTO'];}?>">
+            <input required type="date" class="formItem formInput" name="EMP_ENTRADA" id="EMP_ENTRADA" value="<?php if ($comando == "update"){echo $dados['EMP_ENTRADA'];}?>">
             <br><br>
             <p class="formItem formText" id="formNascimento">Saída:</p>
-            <input required type="date" class="formItem formInput" name="EMP_SAIDA" id="EMP_SAIDA" value="<?php if ($comando == "update"){echo $dados['CLI_NASCIMENTO'];}?>">
+            <input required type="date" class="formItem formInput" name="EMP_SAIDA" id="EMP_SAIDA" value="<?php if ($comando == "update"){echo $dados['EMP_SAIDA'];}?>">
             <br><br>
             <p class="formItem formText" id="formNome">Cliente:</p>
-            <select name="CLI_ID" value="">
+            <select class="form-select" name="CLI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM cliente");
@@ -59,7 +60,7 @@
             </select>
             <br><br>
             <p class="formItem formText" id="formNome">Exemplar:</p>
-            <select name="EXE_ID" value="">
+            <select class="form-select" name="EXE_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM exemplar, titulo WHERE exemplar.TIT_ID = titulo.TIT_ID");
