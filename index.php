@@ -22,7 +22,7 @@
 </head>
 <body class="">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="../index.php"><img src="img/booklogo.png" style="width: 6vw;"></a>
+  <a class="navbar-brand" href="index.php"><img src="img/booklogo.png" style="width: 4vw;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -36,8 +36,8 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  
-  <a class="navbar-brand" href="php/tabelagenero.php">GÊNERO</a>
+
+  <a class="navbar-brand" href="php/tabelaemprestimo.php">EMPRÉSTIMO</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -47,12 +47,12 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" href="php/tabelatitulo.php">TÍTULO</a>
+  <a class="navbar-brand" href="php/tabelaexemplar.php">EXEMPLAR</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" href="php/tabelaexemplar.php">EXEMPLAR</a>
+  <a class="navbar-brand" href="php/tabelagenero.php">GÊNERO</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -62,25 +62,25 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" href="php/tabelaemprestimo.php">EMPRÉSTIMO</a>
+  <a class="navbar-brand" href="php/tabelatitulo.php">TÍTULO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <a class="navbar-brand" href="php/cadcliente.php">INSERIR CLIENTE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" href="php/cademprestimo.php">INSERIR EMPRÉSTIMO</a>
+  <a class="navbar-brand" href="php/cadeditora.php">INSERIR EDITORA</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
+  
 </nav>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-<a class="navbar-brand" href="php/cadexemplar.php">INSERIR EXEMPLAR</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <a class="navbar-brand" href="php/cadtitgen.php">INSERIR TIT_GEN</a>
+  <a class="navbar-brand" href="php/cademprestimo.php">INSERIR EMPRÉSTIMO</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -90,25 +90,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <a class="navbar-brand" href="php/cadtitulo.php">INSERIR TÍTULO</a>
+  <a class="navbar-brand" href="php/cadexemplar.php">INSERIR EXEMPLAR</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  
-  <a class="navbar-brand" href="php/cadcliente.php">INSERIR CLIENTE</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <a class="navbar-brand" href="php/cadeditora.php">INSERIR EDITORA</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
+
   <a class="navbar-brand" href="php/cadgenero.php">INSERIR GÊNERO</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <a class="navbar-brand" href="php/cadtitgen.php">INSERIR TIT_GEN</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <a class="navbar-brand" href="php/cadtitulo.php">INSERIR TÍTULO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
 </nav>
 <br><br>
 <h1 style="font-family: 'Fredoka One', cursive; text-align: center; font-size: 15vh; padding-bottom: 15vh; color:#FFF;">Biblioteca</h1>
@@ -207,6 +208,180 @@
       </tbody>
     </table>
   </div>
+  <br><br>
+  <div class="">
+        <table class="table table-striped" style="background-color: #FFF;">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#ID</th>
+                    <th scope="col">Entrada</th>
+                    <th scope="col">Saída</th>
+                    <th scope="col">Nome do cliente</th>
+                    <th scope="col">Nome do exemplar</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                $pdo = Conexao::getInstance();
+                $consulta = $pdo->query("SELECT * FROM emprestimo, cliente, exemplar, titulo
+                                        WHERE emprestimo.CLI_ID = cliente.CLI_ID
+                                        AND emprestimo.EXE_ID = exemplar.EXE_ID
+                                        AND exemplar.TIT_ID = titulo.TIT_ID");
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+              <tr>
+                <th scope="row"><?php echo $linha['EMP_ID'];?></th>
+                <td><?php echo date("d/m/Y", strtotime($linha['EMP_ENTRADA']));?></td>
+                <td><?php echo date("d/m/Y", strtotime($linha['EMP_SAIDA']));?></td>
+                <td scope="row"><?php echo $linha['CLI_NOME'];?></td>
+                <td scope="row"><?php echo $linha['TIT_NOME'];?></td>
+              </tr>
+            <?php } ?> 
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="">
+        <table class="table table-striped" style="background-color: #FFF;">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#ID</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                $pdo = Conexao::getInstance();
+                $consulta = $pdo->query("SELECT * FROM endereco, cliente
+                                        WHERE endereco.CLI_ID = cliente.CLI_ID");
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <tr>
+                    <th scope="row"><?php echo $linha['END_ID'];?></th>
+                    <td scope="row"><?php echo $linha['END_ESTADO'];?></td>
+                    <td scope="row"><?php echo $linha['END_CIDADE'];?></td>
+                    <td scope="row"><?php echo $linha['END_RUA'];?></td>
+                    <td scope="row"><?php echo $linha['END_NUMERO'];?></td>
+                    <td scope="row"><?php echo $linha['CLI_NOME'];?></td>
+                </tr>
+            <?php } ?> 
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="">
+        <table class="table table-striped" style="background-color: #FFF;">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#ID</th>
+                    <th scope="col">NOME DO TÍTULO</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                $pdo = Conexao::getInstance();
+                $consulta = $pdo->query("SELECT * FROM exemplar, titulo
+                                        WHERE exemplar.TIT_ID = titulo.TIT_ID");
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <tr>
+                    <th scope="row"><?php echo $linha['EXE_ID'];?></th>
+                    <td scope="row"><?php echo $linha['TIT_NOME'];?></td>
+                </tr>
+            <?php } ?> 
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="">
+        <table class="table table-striped" style="background-color: #FFF">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#ID</th>
+                    <th scope="col">Nome</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                $pdo = Conexao::getInstance();
+                $consulta = $pdo->query("SELECT * FROM genero");
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <tr>
+                    <td><?php echo $linha['GEN_ID'];?></td>
+                    <td><?php echo $linha['GEN_NOME'];?></td>
+                </tr>
+            <?php } ?> 
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="">
+        <table class="table table-striped" style="background-color: #FFF;">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">ID DO TÍTULO</th>
+                    <th scope="col">NOME DO TÍTULO</th>
+                    <th scope="col">ID DO GÊNERO</th>
+                    <th scope="col">NOME DO GÊNERO</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                $pdo = Conexao::getInstance();
+                $consulta = $pdo->query("SELECT * FROM tit_gen, titulo, genero
+                                        WHERE tit_gen.TIT_ID = titulo.TIT_ID
+                                        AND tit_gen.GEN_ID = genero.GEN_ID");
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <tr>
+                    <th scope="row"><?php echo $linha['TIT_ID'];?></th>
+                    <td scope="row"><?php echo $linha['TIT_NOME'];?></td>               
+                    <th scope="row"><?php echo $linha['GEN_ID'];?></th>
+                    <td scope="row"><?php echo $linha['GEN_NOME'];?></td>
+                </tr>
+            <?php } ?> 
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="">
+        <table class="table table-striped" style="background-color: #FFF;">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Autor</th>
+                    <th scope="col">Número de Página</th>
+                    <th scope="col">Idioma</th>
+                    <th scope="col">Lançamento</th>
+                    <th scope="col">Editora</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                $pdo = Conexao::getInstance();
+                $consulta = $pdo->query("SELECT * FROM titulo, editora
+                                        WHERE titulo.EDI_ID = editora.EDI_ID");
+                while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <tr>
+                    <th scope="row"><?php echo $linha['TIT_ID'];?></th>
+                    <td scope="row"><?php echo $linha['TIT_NOME'];?></td>
+                    <td scope="row"><?php echo $linha['TIT_AUTOR'];?></td>
+                    <td scope="row"><?php echo $linha['TIT_NUMEROPAG'];?></td>
+                    <td scope="row"><?php echo $linha['TIT_IDIOMA'];?></td>
+                    <td><?php echo date("d/m/Y", strtotime($linha['TIT_LANCAMENTO']));?></td>
+                    <td scope="row"><?php echo $linha['EDI_NOME'];?></td>
+                </tr>
+            <?php } ?> 
+            </tbody>
+        </table>
+    </div>
 <br><br><br>
 </body>
 </html>
