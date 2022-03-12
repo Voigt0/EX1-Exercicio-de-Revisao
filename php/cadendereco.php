@@ -23,6 +23,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='../css/cadastro.css'>
     <script src='../js/main.js'></script>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
@@ -54,7 +55,7 @@
             <input required type="number" class="formItem formInput" name="END_NUMERO" id="END_NUMERO" value="<?php if ($comando == "update"){echo $dados['END_NUMERO'];}?>">
             <br><br>
             <p class="formItem formText" id="formNome">Cliente:</p>
-            <select name="CLI_ID" value="">
+            <select class="form-select" name="CLI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM cliente");
