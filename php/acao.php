@@ -90,9 +90,22 @@
         $dados = dados();
         $titid = $dados['TIT_ID'];
         $genid = $dados['GEN_ID'];
+        $checkrow = $pdo->query("SELECT TIT_ID, GEN_ID FROM tit_gen 
+                          WHERE TIT_ID = '$titid'
+                          AND GEN_ID = '$genid'");
+        $check = 0;
+        while ($checkrow->fetch(PDO::FETCH_ASSOC)) {
+            $check++;
+        }
+        echo $check;
+        if($check == 0){
         $stmt = $pdo->prepare("INSERT INTO `biblioteca`.`tit_gen` (`TIT_ID`, `GEN_ID`) VALUES ('$titid', '$genid');");
         $stmt->execute();
         header('location:tabelatitgen.php');
+        } else {
+            header('location:cadtitgen.php');
+        }
+        
     } else if($tabela == 'emprestimo'){
         $dados = dados();
         $dados['EMP_ENTRADA'] = $_POST["EMP_ENTRADA"];
@@ -136,7 +149,8 @@
         $stmt->execute();
         header('location:tabelaexemplar.php');
     } else if($tabela == 'tit_gen'){
-        $stmt = $pdo->query("DELETE FROM `biblioteca`.`tit_gen` WHERE TIT_ID = $id");
+        if(isset($_GET['idb'])){$idb = $_GET['idb'];}
+        $stmt = $pdo->query("DELETE FROM `biblioteca`.`tit_gen` WHERE TIT_ID = $id AND GEN_ID = $idb");
         $stmt->execute();
         header('location:tabelatitgen.php');
     } else if($tabela == 'emprestimo'){
@@ -198,6 +212,31 @@
         $stmt = $pdo->prepare("UPDATE `biblioteca`.`endereco` SET `END_ESTADO` = '$estado', `END_CIDADE` = '$cidade', `END_RUA` = '$rua', `END_NUMERO` = '$numero', `CLI_ID` = '$cliid' WHERE (`END_ID` = '$id');");
         $stmt->execute();
         header('location:tabelaendereco.php');
+    } else if($tabela == 'exemplar'){
+        $dados = dados();
+        $titid = $dados['TIT_ID'];
+        $stmt = $pdo->prepare("UPDATE `biblioteca`.`exemplar` SET `TIT_ID` = '$titid' WHERE (`EXE_ID` = '$id');");
+        $stmt->execute();
+        header('location:tabelaexemplar.php');
+    } else if($tabela == 'emprestimo'){
+        $dados = dados();
+        $dados['EMP_ENTRADA'] = $_POST["EMP_ENTRADA"];
+        $dados['EMP_SAIDA'] = $_POST["EMP_SAIDA"];
+        $entrada = $dados['EMP_ENTRADA'];
+        $saida = $dados['EMP_SAIDA'];
+        $cliid = $dados['CLI_ID'];
+        $exeid = $dados['EXE_ID'];
+        $stmt = $pdo->prepare("UPDATE `biblioteca`.`emprestimo` SET `EMP_ENTRADA` = '$entrada', `EMP_SAIDA` = '$saida', `CLI_ID` = '$cliid', `EXE_ID` = '$exeid' WHERE (`EMP_ID` = '$id');");
+        $stmt->execute();
+        header('location:tabelaemprestimo.php');
+    } else if($tabela == 'tit_gen'){
+        if(isset($_POST['idb'])){$idb = $_POST['idb'];}
+        $dados = dados();
+        $titid = $dados['TIT_ID'];
+        $genid = $dados['GEN_ID'];
+        $stmt = $pdo->prepare("UPDATE `biblioteca`.`tit_gen` SET `TIT_ID` = '$titid', `GEN_ID` = '$genid' WHERE (`TIT_ID` = '$id') and (`GEN_ID` = '$idb');");
+        $stmt->execute();
+        header('location:tabelatitgen.php');
     }
     }
 
@@ -279,6 +318,25 @@
             $dados['END_RUA'] = $linha["END_RUA"];
             $dados['END_NUMERO'] = $linha["END_NUMERO"];
             $dados['CLI_ID'] = $linha["CLI_ID"];
+        }
+    } else if($tabela == 'exemplar'){
+        $consulta = $pdo->query("SELECT * FROM exemplar, titulo WHERE EXE_ID = $id");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $dados['TIT_ID'] = $linha["TIT_ID"];
+        }
+    } else if($tabela == 'emprestimo'){
+        $consulta = $pdo->query("SELECT * FROM emprestimo, cliente, exemplar WHERE EMP_ID = $id");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $dados['EMP_ENTRADA'] = $linha["EMP_ENTRADA"];
+            $dados['EMP_SAIDA'] = $linha["EMP_SAIDA"];
+            $dados['CLI_ID'] = $linha["CLI_ID"];
+            $dados['EXE_ID'] = $linha["EXE_ID"];
+        }
+    } else if($tabela == 'tit_gen'){
+        $consulta = $pdo->query("SELECT * FROM tit_gen WHERE TIT_ID = $id");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $dados['TIT_ID'] = $linha["TIT_ID"];
+            $dados['GEN_ID'] = $linha["GEN_ID"];
         }
     }
         return $dados;
