@@ -8,6 +8,7 @@
     $dados;
     if ($comando == 'update'){
     $id = isset($_GET['id']) ? $_GET['id'] : "";
+    $idb = isset($_GET['idb']) ? $_GET['idb'] : "";
     if ($id > 0)
         $dados = buscarDados($id, $tabela);
     }
@@ -20,6 +21,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='../css/cadastro.css'>
     <script src='../js/main.js'></script>
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
@@ -53,7 +55,9 @@
             <select name="GEN_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
-                $consulta = $pdo->query("SELECT * FROM genero");
+                $consulta = $pdo->query("SELECT GEN_ID, GEN_NOME 
+                                        FROM genero
+                                        WHERE GEN_ID NOT IN(SELECT GEN_ID FROM tit_gen WHERE TIT_ID = '$id');");
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                 <option name="" value="<?php echo $linha['GEN_ID']; ?>" <?php if ($comando == "update" && $linha['GEN_ID'] == $dados['GEN_ID']){echo "selected";}?>><?php echo $linha['GEN_NOME'];?></option>
@@ -63,6 +67,7 @@
             <input type="hidden" name="comando" id="" value="<?php if($comando == "update"){echo "update";}else{echo "insert";}?>">
             <input type="hidden" id="tabela" name="tabela" class="tabela" value="tit_gen">
             <input type="hidden" name="id" id="" value="<?php if($comando == "update"){echo $id;}?>">
+            <input type="hidden" name="idb" id="" value="<?php if($comando == "update"){echo $idb;}?>">
             <input type="submit" class="formItem formInput" id="acao" value="ENVIAR">
             <br><br>
         </form>    
