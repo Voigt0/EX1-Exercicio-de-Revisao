@@ -42,6 +42,8 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+        <h1>Cadastro Endereço</h1>
+        <br>
             <p class="formItem formText" id="">Estado:</p>
             <input required type="text" class="formItem formInput" name="END_ESTADO" id="END_ESTADO" value="<?php if ($comando == "update"){echo $dados['END_ESTADO'];}?>">
             <br><br>
@@ -55,7 +57,7 @@
             <input required type="number" class="formItem formInput" name="END_NUMERO" id="END_NUMERO" value="<?php if ($comando == "update"){echo $dados['END_NUMERO'];}?>">
             <br><br>
             <p class="formItem formText" id="">Cliente:</p>
-            <select class="form-select" name="CLI_ID" value="">
+            <select class="formItem formText" name="CLI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM cliente");
@@ -64,7 +66,7 @@
                 <option name="" value="<?php echo $linha['CLI_ID']; ?>" <?php if ($comando == "update" && $linha['CLI_ID'] == $dados['CLI_ID']){echo "selected";}?>><?php echo $linha['CLI_NOME'];?></option>
             <?php } ?>
             </select>
-            <br><br>
+            <br><br><br><br><br><br><br><br>
             <input type="hidden" name="comando" id="" value="<?php if($comando == "update"){echo "update";}else{echo "insert";}?>">
             <input type="hidden" id="tabela" name="tabela" class="tabela" value="endereco">
             <input type="hidden" name="id" id="" value="<?php if($comando == "update"){echo $id;}?>">

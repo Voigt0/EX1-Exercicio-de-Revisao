@@ -40,6 +40,8 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+        <h1>Cadastro TIT_GEN</h1>
+        <br>
             <p class="formItem formText" id="">Título:</p>
             <select name="TIT_ID" value="">
             <?php
@@ -56,8 +58,7 @@
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT GEN_ID, GEN_NOME 
-                                        FROM genero
-                                        WHERE GEN_ID NOT IN(SELECT GEN_ID FROM tit_gen WHERE TIT_ID = '$id');");
+                                        FROM genero;");
                 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                 <option name="" value="<?php echo $linha['GEN_ID']; ?>" <?php if ($comando == "update" && $linha['GEN_ID'] == $dados['GEN_ID']){echo "selected";}?>><?php echo $linha['GEN_NOME'];?></option>

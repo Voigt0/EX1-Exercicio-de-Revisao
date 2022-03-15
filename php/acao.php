@@ -234,9 +234,21 @@
         $dados = dados();
         $titid = $dados['TIT_ID'];
         $genid = $dados['GEN_ID'];
+        $checkrow = $pdo->query("SELECT TIT_ID, GEN_ID FROM tit_gen 
+                                WHERE TIT_ID = '$titid'
+                                AND GEN_ID = '$genid'");
+        $check = 0;
+        while ($checkrow->fetch(PDO::FETCH_ASSOC)) {
+        $check++;
+        }
+        echo $check;
+        if($check == 0){
         $stmt = $pdo->prepare("UPDATE `biblioteca`.`tit_gen` SET `TIT_ID` = '$titid', `GEN_ID` = '$genid' WHERE (`TIT_ID` = '$id') and (`GEN_ID` = '$idb');");
         $stmt->execute();
         header('location:tabelatitgen.php');
+        } else {
+            header('location:cadtitgen.php');
+        }
     }
     }
 

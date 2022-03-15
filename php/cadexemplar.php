@@ -39,8 +39,10 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+        <h1>Cadastro Exemplar</h1>
+        <br>
             <p class="formItem formText" id="">Título:</p>
-            <select class="form-select" name="TIT_ID" value="">
+            <select class="formItem formText" name="TIT_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM titulo");

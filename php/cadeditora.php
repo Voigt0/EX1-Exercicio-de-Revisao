@@ -41,6 +41,8 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+        <h1>Cadastro Editora</h1>
+        <br>
             <p class="formItem formText" id="">Cadastrar editora</p><br><br><br>
             <p class="formItem formText" id="">Nome da editora:</p>
             <input required type="text" class="formItem formInput" name="EDI_NOME" id="EDI_NOME" value="<?php if ($comando == "update"){echo $dados['EDI_NOME'];}?>">

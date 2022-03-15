@@ -44,6 +44,8 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+        <h1>Cadastro Cliente</h1>
+        <br>
             <p class="formItem formText" id="">Nome:</p>
             <input required type="text" class="formItem formInput" name="CLI_NOME" id="CLI_NOME" value="<?php if ($comando == "update"){echo $dados['CLI_NOME'];}?>">
             <br><br>

@@ -43,6 +43,8 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+        <h1>Cadastro Título</h1>
+        <br>
             <p class="formItem formText" id="">Nome:</p>
             <input required type="text" class="formItem formInput" name="TIT_NOME" id="TIT_NOME" value="<?php if ($comando == "update"){echo $dados['TIT_NOME'];}?>">
             <br><br>
@@ -59,7 +61,7 @@
             <input type="date" class="formItem formInput" name="TIT_LANCAMENTO" id="TIT_LANCAMENTO" value="<?php if ($comando == "update"){echo $dados['TIT_LANCAMENTO'];}?>">
             <br><br>
             <p class="formItem formText" id="">Editora:</p>
-            <select class="form-select" name="EDI_ID" value="">
+            <select class="formItem formText" name="EDI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM editora");
@@ -68,7 +70,7 @@
                 <option name="" value="<?php echo $linha['EDI_ID']; ?>" <?php if ($comando == "update" && $linha['EDI_ID'] == $dados['EDI_ID']){echo "selected";}?>><?php echo $linha['EDI_NOME'];?></option>
             <?php } ?>
             </select>
-            <br><br>
+            <br><br><br><br><br><br><br><br><br>
             <input type="hidden" name="comando" id="" value="<?php if($comando == "update"){echo "update";}else{echo "insert";}?>">
             <input type="hidden" id="tabela" name="tabela" class="tabela" value="titulo">
             <input type="hidden" name="id" id="" value="<?php if($comando == "update"){echo $id;}?>">

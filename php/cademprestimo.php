@@ -42,6 +42,8 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
+        <h1>Cadastro Empréstimo</h1>
+        <br>
             <p class="formItem formText" id="">Entrada:</p>
             <input required type="date" class="formItem formInput" name="EMP_ENTRADA" id="EMP_ENTRADA" value="<?php if ($comando == "update"){echo $dados['EMP_ENTRADA'];}?>">
             <br><br>
@@ -49,7 +51,7 @@
             <input required type="date" class="formItem formInput" name="EMP_SAIDA" id="EMP_SAIDA" value="<?php if ($comando == "update"){echo $dados['EMP_SAIDA'];}?>">
             <br><br>
             <p class="formItem formText" id="">Cliente:</p>
-            <select class="form-select" name="CLI_ID" value="">
+            <select class="formItem formText" name="CLI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM cliente");
@@ -58,9 +60,9 @@
                 <option name="" value="<?php echo $linha['CLI_ID']; ?>" <?php if ($comando == "update" && $linha['CLI_ID'] == $dados['CLI_ID']){echo "selected";}?>><?php echo $linha['CLI_NOME'];?></option>
             <?php } ?>
             </select>
-            <br><br>
+            <br><br><br><br><br>
             <p class="formItem formText" id="">Exemplar:</p>
-            <select class="form-select" name="EXE_ID" value="">
+            <select class="formItem formText" style="width: 20vw;" name="EXE_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
                 $consulta = $pdo->query("SELECT * FROM exemplar, titulo WHERE exemplar.TIT_ID = titulo.TIT_ID");
