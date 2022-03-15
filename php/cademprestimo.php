@@ -42,13 +42,13 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
-            <p class="formItem formText" id="formNascimento">Entrada:</p>
+            <p class="formItem formText" id="">Entrada:</p>
             <input required type="date" class="formItem formInput" name="EMP_ENTRADA" id="EMP_ENTRADA" value="<?php if ($comando == "update"){echo $dados['EMP_ENTRADA'];}?>">
             <br><br>
-            <p class="formItem formText" id="formNascimento">Saída:</p>
+            <p class="formItem formText" id="">Saída:</p>
             <input required type="date" class="formItem formInput" name="EMP_SAIDA" id="EMP_SAIDA" value="<?php if ($comando == "update"){echo $dados['EMP_SAIDA'];}?>">
             <br><br>
-            <p class="formItem formText" id="formNome">Cliente:</p>
+            <p class="formItem formText" id="">Cliente:</p>
             <select class="form-select" name="CLI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
@@ -59,7 +59,7 @@
             <?php } ?>
             </select>
             <br><br>
-            <p class="formItem formText" id="formNome">Exemplar:</p>
+            <p class="formItem formText" id="">Exemplar:</p>
             <select class="form-select" name="EXE_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();

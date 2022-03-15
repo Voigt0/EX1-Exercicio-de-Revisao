@@ -41,17 +41,17 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
-            <p class="formItem formText" id="formCadastrarEditora">Cadastrar editora</p><br><br><br>
-            <p class="formItem formText" id="formNomedaEditora">Nome da editora:</p>
+            <p class="formItem formText" id="">Cadastrar editora</p><br><br><br>
+            <p class="formItem formText" id="">Nome da editora:</p>
             <input required type="text" class="formItem formInput" name="EDI_NOME" id="EDI_NOME" value="<?php if ($comando == "update"){echo $dados['EDI_NOME'];}?>">
             <br><br>
-            <p class="formItem formText" id="formFundação">Fundação:</p>
+            <p class="formItem formText" id="">Fundação:</p>
             <input required type="date" class="formItem formInput" name="EDI_FUNDACAO" id="EDI_FUNDACAO" value="<?php if ($comando == "update"){echo $dados['EDI_FUNDACAO'];}?>">
             <br><br>
-            <p class="formItem formText" id="formFundador">Fundador:</p>
+            <p class="formItem formText" id="">Fundador:</p>
             <input required type="text" class="formItem formInput" name="EDI_FUNDADOR" id="EDI_FUNDADOR" value="<?php if ($comando == "update"){echo $dados['EDI_FUNDADOR'];}?>">
             <br><br>
-            <p class="formItem formText" id="formSede">Sede:</p>
+            <p class="formItem formText" id="">Sede:</p>
             <input required type="text" class="formItem formInput" name="EDI_SEDE" id="EDI_SEDE" value="<?php if ($comando == "update"){echo $dados['EDI_SEDE'];}?>">
             <br><br><br><br>
             <input type="hidden" name="comando" id="" value="<?php if($comando == "update"){echo "update";}else{echo "insert";}?>">

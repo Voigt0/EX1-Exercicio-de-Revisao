@@ -43,22 +43,22 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
-            <p class="formItem formText" id="formNome">Nome:</p>
+            <p class="formItem formText" id="">Nome:</p>
             <input required type="text" class="formItem formInput" name="TIT_NOME" id="TIT_NOME" value="<?php if ($comando == "update"){echo $dados['TIT_NOME'];}?>">
             <br><br>
-            <p class="formItem formText" id="formSobrenome">Autor:</p>
+            <p class="formItem formText" id="">Autor:</p>
             <input required type="text" class="formItem formInput" name="TIT_AUTOR" id="TIT_AUTOR" value="<?php if ($comando == "update"){echo $dados['TIT_AUTOR'];}?>">
             <br><br>
-            <p class="formItem formText" id="formNascimento">Número de páginas:</p>
+            <p class="formItem formText" id="">Número de páginas:</p>
             <input required type="number" class="formItem formInput" name="TIT_NUMEROPAG" id="TIT_NUMEROPAG" value="<?php if ($comando == "update"){echo $dados['TIT_NUMEROPAG'];}?>">
             <br><br>
-            <p required class="formItem formText" id="formTelefone">Idioma:</p>
+            <p required class="formItem formText" id="">Idioma:</p>
             <input required type="text" class="formItem formInput" name="TIT_IDIOMA" id="TIT_IDIOMA" value="<?php if ($comando == "update"){echo $dados['TIT_IDIOMA'];}?>">
             <br><br>
             <p class="formItem formText" id="formEmail">Lançamento:</p>
             <input type="date" class="formItem formInput" name="TIT_LANCAMENTO" id="TIT_LANCAMENTO" value="<?php if ($comando == "update"){echo $dados['TIT_LANCAMENTO'];}?>">
             <br><br>
-            <p class="formItem formText" id="formNome">Editora:</p>
+            <p class="formItem formText" id="">Editora:</p>
             <select class="form-select" name="EDI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();

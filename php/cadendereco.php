@@ -42,19 +42,19 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
-            <p class="formItem formText" id="formNome">Estado:</p>
+            <p class="formItem formText" id="">Estado:</p>
             <input required type="text" class="formItem formInput" name="END_ESTADO" id="END_ESTADO" value="<?php if ($comando == "update"){echo $dados['END_ESTADO'];}?>">
             <br><br>
-            <p class="formItem formText" id="formSobrenome">Cidade:</p>
+            <p class="formItem formText" id="">Cidade:</p>
             <input required type="text" class="formItem formInput" name="END_CIDADE" id="END_CIDADE" value="<?php if ($comando == "update"){echo $dados['END_CIDADE'];}?>">
             <br><br>
-            <p class="formItem formText" id="formNascimento">Rua:</p>
+            <p class="formItem formText" id="">Rua:</p>
             <input required type="text" class="formItem formInput" name="END_RUA" id="END_RUA" value="<?php if ($comando == "update"){echo $dados['END_RUA'];}?>">
             <br><br>
-            <p required class="formItem formText" id="formTelefone">Número:</p>
+            <p required class="formItem formText" id="">Número:</p>
             <input required type="number" class="formItem formInput" name="END_NUMERO" id="END_NUMERO" value="<?php if ($comando == "update"){echo $dados['END_NUMERO'];}?>">
             <br><br>
-            <p class="formItem formText" id="formNome">Cliente:</p>
+            <p class="formItem formText" id="">Cliente:</p>
             <select class="form-select" name="CLI_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();

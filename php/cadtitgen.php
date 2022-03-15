@@ -40,7 +40,7 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
-            <p class="formItem formText" id="formNome">Título:</p>
+            <p class="formItem formText" id="">Título:</p>
             <select name="TIT_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();
@@ -51,7 +51,7 @@
             <?php } ?>
             </select>
             <br><br>
-            <p class="formItem formText" id="formNome">Gênero:</p>
+            <p class="formItem formText" id="">Gênero:</p>
             <select name="GEN_ID" value="">
             <?php
                 $pdo = Conexao::getInstance();

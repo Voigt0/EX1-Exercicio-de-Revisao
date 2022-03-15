@@ -44,25 +44,25 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
-            <p class="formItem formText" id="formNome">Nome:</p>
+            <p class="formItem formText" id="">Nome:</p>
             <input required type="text" class="formItem formInput" name="CLI_NOME" id="CLI_NOME" value="<?php if ($comando == "update"){echo $dados['CLI_NOME'];}?>">
             <br><br>
-            <p class="formItem formText" id="formSobrenome">Sobrenome:</p>
+            <p class="formItem formText" id="">Sobrenome:</p>
             <input required type="text" class="formItem formInput" name="CLI_SOBRENOME" id="CLI_SOBRENOME" value="<?php if ($comando == "update"){echo $dados['CLI_SOBRENOME'];}?>">
             <br><br>
-            <p class="formItem formText" id="formNascimento">Nascimento:</p>
+            <p class="formItem formText" id="">Nascimento:</p>
             <input required type="date" class="formItem formInput" name="CLI_NASCIMENTO" id="CLI_NASCIMENTO" value="<?php if ($comando == "update"){echo $dados['CLI_NASCIMENTO'];}?>">
             <br><br>
-            <p required class="formItem formText" id="formTelefone">Telefone:</p>
+            <p required class="formItem formText" id="">Telefone:</p>
             <input required type="tel" class="formItem formInput" name="CLI_TELEFONE" id="CLI_TELEFONE" value="<?php if ($comando == "update"){echo $dados['CLI_TELEFONE'];}?>">
             <br><br>
-            <p class="formItem formText" id="formEmail">Email:</p>
+            <p class="formItem formText" id="">Email:</p>
             <input type="email" class="formItem formInput" name="CLI_EMAIL" id="CLI_EMAIL" value="<?php if ($comando == "update"){echo $dados['CLI_EMAIL'];}?>">
             <br><br> 
-            <p class="formItem formText" id="formCPF">CPF:</p>
+            <p class="formItem formText" id="">CPF:</p>
             <input required type="text" class="formItem formInput" name="CLI_CPF" id="CLI_CPF" value="<?php if ($comando == "update"){echo $dados['CLI_CPF'];}?>">
             <br><br>
-            <p class="formItem formText" id="formSenha">Senha:</p>
+            <p class="formItem formText" id="">Senha:</p>
             <input required type="password" class="formItem formInput" name="CLI_SENHA" id="CLI_SENHA" value="<?php if ($comando == "update"){echo $dados['CLI_SENHA'];}?>">
             <br><br>
             <br><br><br><br>

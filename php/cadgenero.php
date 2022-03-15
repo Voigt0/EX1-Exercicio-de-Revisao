@@ -38,8 +38,8 @@
     </header>
     <content>
         <form action="acao.php" method="post" id="form">
-            <p class="formItem formText" id="formCadastrarGenero">Cadastrar gênero</p><br><br><br>
-            <p class="formItem formText" id="formNomedoGenero">Nome do gênero:</p>
+            <p class="formItem formText" id="">Cadastrar gênero</p><br><br><br>
+            <p class="formItem formText" id="">Nome do gênero:</p>
             <input required type="text" class="formItem formInput" name="GEN_NOME" id="GEN_NOME" value="<?php if ($comando == "update"){echo $dados['GEN_NOME'];}?>">
             <br><br><br><br>
             <input type="hidden" name="comando" id="" value="<?php if($comando == "update"){echo "update";}else{echo "insert";}?>">
